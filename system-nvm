@@ -1,0 +1,1 @@
+unset -f system-nvm ; function system-nvm { if [ -z "$1" ]; then echo "Usage: system-nvm <nvm-version>" ; else if nvm use "$1"; then ln -fs `nvm which current` /usr/local/bin/node; ln -fs `nvm which current | sed s/node$/npm/` /usr/local/bin/npm; nvm use system; fi; fi }
